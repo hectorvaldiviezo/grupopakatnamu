@@ -5,6 +5,8 @@ import ComplaintForm from "@/components/ComplaintForm";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const sedes = await getSedes(EMPRESA_ID);
   return (
@@ -15,10 +17,7 @@ export default async function Home() {
           title="LIBRO DE RECLAMACIONES"
           subtitle=""
           description=""
-          src={
-            MILLA_BASE +
-            "/webImages/4/Libro de Reclamaciones"
-          }
+          src={MILLA_BASE + "/webImages/4/Libro de Reclamaciones"}
           height="h-[400px]"
           gradient={true}
           complaint={true}

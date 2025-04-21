@@ -1,6 +1,5 @@
 "use client";
 import ComplaintQuery from "@/components/complaints/components/ComplaintQuery";
-import { useComplaintStore } from "@/components/complaints/lib/complaint.store";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/Hero";
