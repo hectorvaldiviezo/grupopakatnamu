@@ -35,7 +35,7 @@ export default function Header() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#01237e]/90 py-2 shadow-lg backdrop-blur-md"
+          ? "bg-secondary/90 py-2 shadow-lg backdrop-blur-md"
           : "bg-transparent py-4"
       }`}
     >
@@ -69,13 +69,13 @@ export default function Header() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`relative text-sm font-medium text-white transition-colors duration-300 hover:text-[#f60404] uppercase ${
+                  className={`relative text-sm font-medium text-white transition-colors duration-300 hover:text-primary uppercase ${
                     isScrolled ? "text-white" : "text-white/90"
                   }`}
                 >
                   {item.name}
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#f60404]"
+                    className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary"
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
                   />
@@ -88,10 +88,10 @@ export default function Header() {
         {/* Contact Button (Desktop) */}
         <Link
           href="#contacto"
-          className="group relative overflow-hidden rounded-full bg-[#f60404] px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#f60404]/20"
+          className="group relative overflow-hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
         >
           <span className="relative z-10">Contáctanos</span>
-          <span className="absolute inset-0 -z-10 translate-y-full bg-[#01237e] opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
+          <span className="absolute inset-0 -z-10 translate-y-full bg-secondary opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
         </Link>
 
         {/* Mobile Menu Button */}
@@ -129,7 +129,7 @@ export default function Header() {
               animate={{ opacity: 1, height: "100vh" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 top-0 z-0 flex flex-col bg-gradient-to-b from-[#01237e] to-[#020c24] pt-20"
+              className="fixed inset-0 top-0 z-0 flex flex-col bg-gradient-to-b from-secondary to-[#020c24] pt-20"
             >
               <div className="container mx-auto px-4">
                 <nav className="py-8">
@@ -146,7 +146,7 @@ export default function Header() {
                           onClick={() => setIsMenuOpen(false)}
                           className="flex items-center text-xl font-medium text-white"
                         >
-                          <span className="mr-2 h-2 w-2 rounded-full bg-[#f60404]" />
+                          <span className="mr-2 h-2 w-2 rounded-full bg-primary" />
                           {item.name}
                         </Link>
                       </motion.li>
@@ -163,10 +163,10 @@ export default function Header() {
                   <Link
                     href="#contacto"
                     onClick={() => setIsMenuOpen(false)}
-                    className="group relative block w-full overflow-hidden rounded-full bg-[#f60404] px-6 py-3 text-center text-base font-medium text-white transition-all duration-300"
+                    className="group relative block w-full overflow-hidden rounded-full bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all duration-300"
                   >
                     <span className="relative z-10">Contáctanos</span>
-                    <span className="absolute inset-0 -z-10 translate-y-full bg-[#01237e] opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
+                    <span className="absolute inset-0 -z-10 translate-y-full bg-secondary opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
                   </Link>
                 </motion.div>
 

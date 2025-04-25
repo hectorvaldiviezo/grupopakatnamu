@@ -71,13 +71,13 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-[#01237e] via-[#041e5c] to-[#020c24]"
+      className="relative h-screen w-full overflow-hidden bg-gradient-to-br bg-background"
     >
       {/* Animated geometric shapes */}
       <div className="absolute inset-0">
-        <div className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full bg-[#f60404] opacity-20 blur-[100px]" />
-        <div className="absolute right-[15%] top-[30%] h-72 w-72 rounded-full bg-[#01237e] opacity-30 blur-[120px]" />
-        <div className="absolute bottom-[10%] left-[20%] h-80 w-80 rounded-full bg-[#f60404] opacity-20 blur-[150px]" />
+        <div className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full bg-primary opacity-20 blur-[100px]" />
+        <div className="absolute right-[15%] top-[30%] h-72 w-72 rounded-full bg-secondary opacity-30 blur-[120px]" />
+        <div className="absolute bottom-[10%] left-[20%] h-80 w-80 rounded-full bg-primary opacity-20 blur-[150px]" />
       </div>
 
       {/* Dynamic grid lines */}
@@ -174,27 +174,27 @@ export default function HeroSection() {
           }}
         >
           <div
-            className="absolute inset-0 border-2 border-[#f60404]/30"
+            className="absolute inset-0 border-2 border-primary/30"
             style={{ transform: "translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#01237e]/30"
+            className="absolute inset-0 border-2 border-secondary/30"
             style={{ transform: "rotateY(90deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#f60404]/30"
+            className="absolute inset-0 border-2 border-primary/30"
             style={{ transform: "rotateY(180deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#01237e]/30"
+            className="absolute inset-0 border-2 border-secondary/30"
             style={{ transform: "rotateY(-90deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#f60404]/30"
+            className="absolute inset-0 border-2 border-primary/30"
             style={{ transform: "rotateX(90deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#01237e]/30"
+            className="absolute inset-0 border-2 border-secondary/30"
             style={{ transform: "rotateX(-90deg) translateZ(30px)" }}
           />
         </motion.div>
@@ -220,27 +220,27 @@ export default function HeroSection() {
           }}
         >
           <div
-            className="absolute inset-0 border-2 border-[#f60404]/30"
+            className="absolute inset-0 border-2 border-primary/30"
             style={{ transform: "translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#01237e]/30"
+            className="absolute inset-0 border-2 border-secondary/30"
             style={{ transform: "rotateY(90deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#f60404]/30"
+            className="absolute inset-0 border-2 border-primary/30"
             style={{ transform: "rotateY(180deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#01237e]/30"
+            className="absolute inset-0 border-2 border-secondary/30"
             style={{ transform: "rotateY(-90deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#f60404]/30"
+            className="absolute inset-0 border-2 border-primary/30"
             style={{ transform: "rotateX(90deg) translateZ(30px)" }}
           />
           <div
-            className="absolute inset-0 border-2 border-[#01237e]/30"
+            className="absolute inset-0 border-2 border-secondary/30"
             style={{ transform: "rotateX(-90deg) translateZ(30px)" }}
           />
         </motion.div>
@@ -290,7 +290,7 @@ export default function HeroSection() {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <span className="inline-block">
-            <span className="inline-block text-[#f60404]">GRUPO</span>{" "}
+            <span className="inline-block text-primary">GRUPO</span>{" "}
             <span className="inline-block bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               PAKATNAMU
             </span>
@@ -305,7 +305,7 @@ export default function HeroSection() {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <motion.div
-            className="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-[#f60404] to-[#01237e]"
+            className="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-primary to-secondary"
             animate={{ x: ["0%", "100%", "0%"] }}
             transition={{
               duration: 3,
@@ -334,9 +334,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          <button className="group relative overflow-hidden rounded-full bg-[#f60404] px-8 py-3 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:shadow-[#f60404]/30">
+          <button className="group relative overflow-hidden rounded-full bg-primary px-8 py-3 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:shadow-primary/30">
             <span className="relative z-10">Descubrir</span>
-            <span className="absolute inset-0 -z-10 translate-y-full bg-gradient-to-r from-[#01237e] to-[#01237e]/80 opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
+            <span className="absolute inset-0 -z-10 translate-y-full bg-gradient-to-r from-secondary to-secondary/80 opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
           </button>
 
           <button className="group relative overflow-hidden rounded-full border-2 border-white/20 bg-transparent px-8 py-3 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:border-white/40 hover:shadow-white/5">

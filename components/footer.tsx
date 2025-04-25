@@ -18,7 +18,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-slate-900 text-white">
+    <footer className="relative bg-secondary text-white">
       <div className="container relative z-10 mx-auto px-4 pt-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <motion.div

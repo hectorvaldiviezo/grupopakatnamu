@@ -60,7 +60,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-gradient-to-b from-[#01237e] to-[#020c24] py-24 text-white"
+      className="relative overflow-hidden bg-background py-24 text-white"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0">
@@ -78,7 +78,7 @@ export default function AboutSection() {
               repeat: Number.POSITIVE_INFINITY,
               ease: "linear",
             }}
-            className="absolute h-1 w-1 rounded-full bg-white"
+            className="absolute h-1 w-1 rounded-full bg-secondary"
             style={{
               left: `${p.left}%`,
               top: `${p.top}%`,
@@ -92,10 +92,10 @@ export default function AboutSection() {
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div style={{ y, opacity }} className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl text-secondary">
             Sobre Nosotros
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Grupo Pakatnamu es un conglomerado empresarial con más de 20 años de
             experiencia ofreciendo soluciones integrales.
           </p>
@@ -109,12 +109,12 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group rounded-xl bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10"
+              className="group rounded-xl p-6 backdrop-blur-sm transition-all shadow-lg duration-300 hover:bg-white/10"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#f60404]/20 text-[#f60404] transition-all duration-300 group-hover:bg-[#f60404]/30 group-hover:text-white">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary transition-all duration-300 group-hover:bg-primary/30 group-hover:text-white">
                 <feature.icon className="h-6 w-6" />
               </div>
-              <h3 className="mb-2 text-xl font-bold">{feature.title}</h3>
+              <h3 className="mb-2 text-xl font-bold text-primary">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
             </motion.div>
           ))}
