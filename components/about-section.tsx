@@ -60,8 +60,34 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-background py-24 text-white"
+      className="relative overflow-hidden bg-background py-16 text-white"
     >
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 grid grid-cols-6 gap-4">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <div
+              key={`v-${i}`}
+              className="h-full w-[1px] bg-secondary"
+              style={{
+                opacity: i % 2 === 0 ? 0.3 : 0.1,
+                transform: `translateX(${i * (100 / 6)}%)`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="absolute inset-0 grid grid-rows-6 gap-4">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <div
+              key={`h-${i}`}
+              className="h-[1px] w-full bg-secondary"
+              style={{
+                opacity: i % 2 === 0 ? 0.3 : 0.1,
+                transform: `translateY(${i * (100 / 6)}%)`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {particles.map((p, i) => (
@@ -114,7 +140,9 @@ export default function AboutSection() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary transition-all duration-300 group-hover:bg-primary/30 group-hover:text-white">
                 <feature.icon className="h-6 w-6" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-primary">{feature.title}</h3>
+              <h3 className="mb-2 text-xl font-bold text-primary">
+                {feature.title}
+              </h3>
               <p className="text-gray-400">{feature.description}</p>
             </motion.div>
           ))}

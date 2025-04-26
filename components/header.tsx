@@ -36,12 +36,12 @@ export default function Header() {
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-secondary/90 py-2 shadow-lg backdrop-blur-md"
-          : "bg-transparent py-4"
+          : "bg-transparent py-4 text-secondary"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <Link href="#" className="relative z-10 flex items-center">
+        <Link href="/" className="relative z-10 flex items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -69,8 +69,8 @@ export default function Header() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`relative text-sm font-medium text-white transition-colors duration-300 hover:text-primary uppercase ${
-                    isScrolled ? "text-white" : "text-white/90"
+                  className={`relative text-sm font-semibold transition-colors duration-300 hover:text-primary uppercase ${
+                    isScrolled ? "text-white" : "text-secondary"
                   }`}
                 >
                   {item.name}
@@ -87,7 +87,7 @@ export default function Header() {
 
         {/* Contact Button (Desktop) */}
         <Link
-          href="#contacto"
+          href="/#contacto"
           className="group relative overflow-hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
         >
           <span className="relative z-10">Contáctanos</span>

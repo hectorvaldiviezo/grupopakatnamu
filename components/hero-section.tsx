@@ -4,6 +4,8 @@ import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -86,7 +88,7 @@ export default function HeroSection() {
           {Array.from({ length: 7 }).map((_, i) => (
             <div
               key={`v-${i}`}
-              className="h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent"
+              className="h-full w-[1px] bg-gradient-to-b from-secondary via-white to-transparent"
               style={{
                 opacity: i % 2 === 0 ? 0.3 : 0.1,
                 transform: `translateX(${i * (100 / 6)}%)`,
@@ -98,7 +100,7 @@ export default function HeroSection() {
           {Array.from({ length: 7 }).map((_, i) => (
             <div
               key={`h-${i}`}
-              className="h-[1px] w-full bg-gradient-to-r from-transparent via-white to-transparent"
+              className="h-[1px] w-full bg-gradient-to-r from-secondary via-white to-transparent"
               style={{
                 opacity: i % 2 === 0 ? 0.3 : 0.1,
                 transform: `translateY(${i * (100 / 6)}%)`,
@@ -257,7 +259,7 @@ export default function HeroSection() {
           >
             <div className="absolute -inset-4 rounded-full bg-white/5 backdrop-blur-sm" />
             <Image
-              src="/gplogowhite.svg"
+              src="/gplogotransparent.svg"
               alt="Grupo Pakatnamu Logo"
               width={300}
               height={120}
@@ -291,7 +293,7 @@ export default function HeroSection() {
         >
           <span className="inline-block">
             <span className="inline-block text-primary">GRUPO</span>{" "}
-            <span className="inline-block bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="inline-block bg-gradient-to-r from-secondary to-secondary/90 bg-clip-text text-transparent">
               PAKATNAMU
             </span>
           </span>
@@ -316,7 +318,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.p
-          className="parallax max-w-2xl text-xl text-gray-200"
+          className="parallax max-w-2xl text-xl text-secondary/80"
           data-speed="0.2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -325,7 +327,9 @@ export default function HeroSection() {
           <span className="font-light">Conectando</span>{" "}
           <span className="font-semibold">excelencia</span>{" "}
           <span className="font-light">a través de nuestras</span>{" "}
-          <span className="font-semibold">empresas especializadas</span>
+          <span className="font-semibold text-primary">
+            empresas especializadas
+          </span>
         </motion.p>
 
         <motion.div
@@ -334,15 +338,19 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          <button className="group relative overflow-hidden rounded-full bg-primary px-8 py-3 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:shadow-primary/30">
-            <span className="relative z-10">Descubrir</span>
-            <span className="absolute inset-0 -z-10 translate-y-full bg-gradient-to-r from-secondary to-secondary/80 opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
-          </button>
+          <Link href="#empresas">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="rounded-full text-xl"
+            >
+              Descubrir
+            </Button>
+          </Link>
 
-          <button className="group relative overflow-hidden rounded-full border-2 border-white/20 bg-transparent px-8 py-3 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:border-white/40 hover:shadow-white/5">
-            <span className="relative z-10">Contacto</span>
-            <span className="absolute inset-0 -z-10 scale-x-0 bg-white/10 transition-transform duration-300 group-hover:scale-x-100 rounded-full"></span>
-          </button>
+          <Button size="lg" className="rounded-full text-xl">
+            Contacto
+          </Button>
         </motion.div>
       </div>
 
@@ -359,7 +367,7 @@ export default function HeroSection() {
           }}
         >
           <Image
-            src="/placeholder.svg?height=50&width=50"
+            src="/tplogo.svg"
             alt="Transportes Icon"
             width={50}
             height={50}
@@ -380,7 +388,7 @@ export default function HeroSection() {
           }}
         >
           <Image
-            src="/placeholder.svg?height=50&width=50"
+            src="/aplogo.svg"
             alt="Automotores Icon"
             width={50}
             height={50}
@@ -402,7 +410,7 @@ export default function HeroSection() {
           }}
         >
           <Image
-            src="/placeholder.svg?height=50&width=50"
+            src="/dplogo.svg"
             alt="Deposito Icon"
             width={50}
             height={50}

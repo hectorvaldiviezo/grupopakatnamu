@@ -64,12 +64,12 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="mb-6 text-xl font-bold">Nuestras Empresas</h3>
-            <ul className="space-y-4 text-gray-400">
+            <ul className="space-y-4 text-muted-foreground">
               <li>
                 <Link
                   target="_blank"
                   href="https://transportespakatnamu.com/"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Transportes Pakatnamu
                 </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <Link
                   target="_blank"
                   href="https://www.depositopakatnamu.com.pe/"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Depósito Pakatnamu
                 </Link>
@@ -87,7 +87,7 @@ export default function Footer() {
                 <Link
                   target="_blank"
                   href="https://www.automotorespakatnamu.com/"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Automotores Pakatnamu
                 </Link>
@@ -102,11 +102,11 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="mb-6 text-xl font-bold">Enlaces Rápidos</h3>
-            <ul className="space-y-4 text-gray-400">
+            <ul className="space-y-4 text-muted-foreground">
               <li>
                 <Link
                   href="#"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Inicio
                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Sobre Nosotros
                 </Link>
@@ -122,7 +122,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Servicios
                 </Link>
@@ -130,7 +130,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Novedades
                 </Link>
@@ -138,7 +138,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="transition-colors duration-300 hover:text-[#f60404]"
+                  className="transition-colors duration-300 hover:text-background"
                 >
                   Contacto
                 </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
             <h3 className="mb-6 text-xl font-bold">Contacto</h3>
             <ul className="space-y-4 text-gray-400">
               <li className="flex items-start">
-                <MapPin className="mr-3 min-h-5 min-w-5 text-[#f60404]" />
+                <MapPin className="mr-3 min-h-5 min-w-5 text-white" />
                 <span>Carretera a Lambayeque Km. 4 Fundo Santo Tomas</span>
               </li>
               {/* <li className="flex items-start">
@@ -163,7 +163,7 @@ export default function Footer() {
                 <span>+51 123 456 789</span>
               </li> */}
               <li className="flex items-start">
-                <Mail className="mr-3 min-h-5 min-w-5 text-[#f60404]" />
+                <Mail className="mr-3 min-h-5 min-w-5 text-white" />
                 <span>info@grupopakatnamu.com</span>
               </li>
               <li className="flex items-start">
@@ -186,7 +186,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-12 border-t border-slate-800 py-8 text-center text-sm text-gray-400"
+          className="mt-12 border-t border-muted-foreground py-8 text-center text-sm text-muted-foreground"
         >
           <p>© {currentYear} Grupo Pakatnamu. Todos los derechos reservados.</p>
         </motion.div>

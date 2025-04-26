@@ -64,10 +64,36 @@ export default function CompaniesSection() {
   const [activeTab, setActiveTab] = useState("transportes");
 
   return (
-    <section className="relative py-24">
+    <section className="relative py-16">
       {/* Background with texture */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-100 to-white opacity-80" />
-      <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-5" />
+      <div className="absolute inset-0" />
+      {/* <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-5" /> */}
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 grid grid-cols-6 gap-4">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <div
+              key={`v-${i}`}
+              className="h-full w-[1px] bg-secondary"
+              style={{
+                opacity: i % 2 === 0 ? 0.3 : 0.1,
+                transform: `translateX(${i * (100 / 6)}%)`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="absolute inset-0 grid grid-rows-6 gap-4">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <div
+              key={`h-${i}`}
+              className="h-[1px] w-full bg-secondary"
+              style={{
+                opacity: i % 2 === 0 ? 0.3 : 0.1,
+                transform: `translateY(${i * (100 / 6)}%)`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -75,15 +101,15 @@ export default function CompaniesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-8 text-center"
         >
-          <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold tracking-tight text-secondary md:text-5xl">
             Nuestras Empresas
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-600">
+          {/* <p className="mx-auto max-w-2xl text-lg text-slate-600">
             Descubre cómo nuestras empresas especializadas trabajan en sinergia
             para ofrecer soluciones integrales.
-          </p>
+          </p> */}
         </motion.div>
 
         <Tabs
