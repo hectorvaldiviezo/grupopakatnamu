@@ -39,7 +39,7 @@ const companies = [
       "Asesoría especializada",
     ],
     image:
-      "https://milla.grupopakatnamu.com/webImages/Libro%20de%20Reclamaciones",
+      "https://milla.grupopakatnamu.com/webImages/2/Libro%20de%20Reclamaciones",
     link: "https://www.depositopakatnamu.com.pe/",
   },
   {

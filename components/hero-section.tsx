@@ -300,7 +300,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.div
-          className="parallax relative mb-8 h-1 w-40 overflow-hidden rounded-full bg-white/20"
+          className="parallax relative mb-4 h-1 w-40 overflow-hidden rounded-full bg-white/20"
           data-speed="0.2"
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: 160, opacity: 1 }}
@@ -332,8 +332,75 @@ export default function HeroSection() {
           </span>
         </motion.p>
 
+        <div className="flex pt-4 gap-8">
+          {/* Floating company icons */}
+          <Link target="_blank" href="https://transportespakatnamu.com/">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
+              style={{
+                boxShadow: "0 0 20px rgba(246, 4, 4, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              <Image
+                src="/tplogo.svg"
+                alt="Transportes Icon"
+                width={50}
+                height={50}
+                className="opacity-80"
+              />
+            </motion.div>
+          </Link>
+
+          <Link target="_blank" href="https://www.depositopakatnamu.com.pe/">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.9, duration: 0.8 }}
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
+              style={{
+                boxShadow:
+                  "0 0 20px rgba(246, 4, 4, 0.2), 0 0 20px rgba(1, 35, 126, 0.2)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              <Image
+                src="/dplogo.svg"
+                alt="Deposito Icon"
+                width={50}
+                height={50}
+                className="opacity-80"
+              />
+            </motion.div>
+          </Link>
+
+          <Link target="_blank" href="https://automotorespakatnamu.com/">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.7, duration: 0.8 }}
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
+              style={{
+                boxShadow: "0 0 20px rgba(1, 35, 126, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              <Image
+                src="/aplogo.svg"
+                alt="Automotores Icon"
+                width={50}
+                height={50}
+                className="opacity-80"
+              />
+            </motion.div>
+          </Link>
+        </div>
+
         <motion.div
-          className="mt-10 flex gap-4"
+          className="mt-4 flex gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
@@ -351,71 +418,6 @@ export default function HeroSection() {
           <Button size="lg" className="rounded-full text-xl">
             Contacto
           </Button>
-        </motion.div>
-      </div>
-
-      {/* Floating company icons */}
-      <div className="absolute bottom-[20%] left-[10%] z-10 hidden md:block">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
-          style={{
-            boxShadow: "0 0 20px rgba(246, 4, 4, 0.3)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
-        >
-          <Image
-            src="/tplogo.svg"
-            alt="Transportes Icon"
-            width={50}
-            height={50}
-            className="opacity-80"
-          />
-        </motion.div>
-      </div>
-
-      <div className="absolute bottom-[30%] right-[10%] z-10 hidden md:block">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.7, duration: 0.8 }}
-          className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
-          style={{
-            boxShadow: "0 0 20px rgba(1, 35, 126, 0.3)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
-        >
-          <Image
-            src="/aplogo.svg"
-            alt="Automotores Icon"
-            width={50}
-            height={50}
-            className="opacity-80"
-          />
-        </motion.div>
-      </div>
-
-      <div className="absolute right-[30%] top-[20%] z-10 hidden md:block">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.9, duration: 0.8 }}
-          className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
-          style={{
-            boxShadow:
-              "0 0 20px rgba(246, 4, 4, 0.2), 0 0 20px rgba(1, 35, 126, 0.2)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
-        >
-          <Image
-            src="/dplogo.svg"
-            alt="Deposito Icon"
-            width={50}
-            height={50}
-            className="opacity-80"
-          />
         </motion.div>
       </div>
     </section>

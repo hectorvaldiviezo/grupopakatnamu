@@ -20,12 +20,9 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -34,7 +31,7 @@ export default function Header() {
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled || window?.scrollY > 0
+        isScrolled
           ? "bg-secondary/90 py-2 shadow-lg backdrop-blur-md"
           : "bg-transparent py-4 text-secondary"
       }`}
@@ -43,17 +40,21 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="relative z-10 flex items-center">
           <motion.div
+            className="flex items-center justify-center gap-2 uppercase font-bold text-xl"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/gplogo.svg"
+              src={isScrolled ? "/gplogowhite.svg" : "/gplogo.svg"}
               alt="Grupo Pakatnamu"
               width={120}
               height={40}
               className="h-10 w-auto"
             />
+            <span className={`text-${isScrolled ? "white" : "secondary"}`}>
+              Grupo Pakatnamu
+            </span>
           </motion.div>
         </Link>
 
@@ -84,15 +85,6 @@ export default function Header() {
             ))}
           </ul>
         </motion.nav>
-
-        {/* Contact Button (Desktop) */}
-        <Link
-          href="/#contacto"
-          className="group relative overflow-hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-        >
-          <span className="relative z-10">Contáctanos</span>
-          <span className="absolute inset-0 -z-10 translate-y-full bg-secondary opacity-90 transition-transform duration-300 group-hover:translate-y-0"></span>
-        </Link>
 
         {/* Mobile Menu Button */}
         <motion.button
