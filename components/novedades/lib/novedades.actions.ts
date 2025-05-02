@@ -6,8 +6,18 @@ export async function getNews(page: number): Promise<NewsResponse> {
   const config: AxiosRequestConfig = {
     params: {
       company: EMPRESA_ID,
-      limit: 3,
       page,
+    },
+  };
+  const { data } = await apiMilla.get<NewsResponse>(`/news`, config);
+  return data;
+}
+
+export async function getNewsLimit(limit: number): Promise<NewsResponse> {
+  const config: AxiosRequestConfig = {
+    params: {
+      company: EMPRESA_ID,
+      limit,
     },
   };
   const { data } = await apiMilla.get<NewsResponse>(`/news`, config);

@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
+import LineaEticaModal from "./linea-etica";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -154,29 +156,19 @@ export default function Footer() {
           >
             <h3 className="mb-6 text-xl font-bold">Contacto</h3>
             <ul className="space-y-4 text-gray-400">
-              <li className="flex items-start">
-                <MapPin className="mr-3 min-h-5 min-w-5 text-white" />
+              <li className="flex items-start ps-2">
+                <MapPin className="mr-3 min-h-5 min-w-5" />
                 <span>Carretera a Lambayeque Km. 4 Fundo Santo Tomas</span>
               </li>
               {/* <li className="flex items-start">
                 <Phone className="mr-3 h-5 w-5 text-[#f60404]" />
                 <span>+51 123 456 789</span>
               </li> */}
-              <li className="flex items-start">
-                <Mail className="mr-3 min-h-5 min-w-5 text-white" />
+              <li className="flex items-start ps-2">
+                <Mail className="mr-3 min-h-5 min-w-5" />
                 <span>info@grupopakatnamu.com</span>
               </li>
-              <li className="flex items-start">
-                <Link href="/libro-reclamaciones">
-                  <Image
-                    src={BASE_PATH + "/logo-libro.svg"}
-                    width={150}
-                    height={60}
-                    alt="Transportes Pakatnamu"
-                    className="py-2 px-4 ps-0"
-                  />
-                </Link>
-              </li>
+              <LineaEticaModal />
             </ul>
           </motion.div>
         </div>

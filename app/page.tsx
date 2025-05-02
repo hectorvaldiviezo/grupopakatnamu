@@ -4,10 +4,11 @@ import CompaniesSection from "@/components/companies-section";
 import AboutSection from "@/components/about-section";
 import NewsSection from "@/components/news-section";
 import Footer from "@/components/footer";
-import { getNews } from "@/components/novedades/lib/novedades.actions";
+import { getNewsLimit } from "@/components/novedades/lib/novedades.actions";
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const noticias = await getNews(1);
+  const noticias = await getNewsLimit(3);
 
   return (
     <main className="min-h-screen overflow-hidden">

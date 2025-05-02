@@ -405,7 +405,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          <Link href="#empresas">
+          <Link href="/#empresas">
             <Button
               variant="secondary"
               size="lg"
@@ -415,9 +415,11 @@ export default function HeroSection() {
             </Button>
           </Link>
 
-          <Button size="lg" className="rounded-full text-xl">
-            Contacto
-          </Button>
+          <Link href="/#contacto">
+            <Button size="lg" className="rounded-full text-xl">
+              Contacto
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

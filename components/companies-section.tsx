@@ -22,7 +22,7 @@ const companies = [
       "Transporte especializado",
     ],
     image:
-      "https://milla.grupopakatnamu.com/transportes/administradorweb/hero_nosotros.png",
+      "https://milla.grupopakatnamu.com/webImages/4/Transportes",
     link: "https://transportespakatnamu.com/",
   },
   {
@@ -39,7 +39,7 @@ const companies = [
       "Asesoría especializada",
     ],
     image:
-      "https://milla.grupopakatnamu.com/webImages/2/Libro%20de%20Reclamaciones",
+      "https://milla.grupopakatnamu.com/webImages/4/Deposito",
     link: "https://www.depositopakatnamu.com.pe/",
   },
   {
@@ -213,7 +213,7 @@ export default function CompaniesSection() {
                       />
                     </div>
                     <div
-                      className={`absolute inset-0 bg-gradient-to-tr ${company.color} mix-blend-multiply opacity-30`}
+                      className={`absolute inset-0 bg-gradient-to-tr from-slate-600 to-slate-500 mix-blend-multiply opacity-30`}
                     />
                   </motion.div>
                 </motion.div>
