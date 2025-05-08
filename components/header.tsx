@@ -30,13 +30,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 max-w-screen-xl mx-auto px-4 py-3 m-2 rounded-xl ${
         isScrolled
-          ? "bg-secondary/90 py-2 shadow-lg backdrop-blur-md"
-          : "bg-transparent py-4 text-secondary"
+          ? "bg-gradient-to-r from-secondary via-secondary to-primary shadow-lg backdrop-blur-md"
+          : "bg-transparent text-secondary"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4">
+      <div className="flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="relative z-10 flex items-center">
           <motion.div
@@ -66,12 +66,14 @@ export default function Header() {
           className="hidden md:block"
         >
           <ul className="flex space-x-8">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`relative text-sm font-semibold transition-colors duration-300 hover:text-primary uppercase ${
-                    isScrolled ? "text-white" : "text-secondary"
+                  className={`relative text-sm font-semibold transition-colors duration-300 uppercase ${
+                    isScrolled
+                      ? "text-white hover:text-gray-300"
+                      : "text-secondary hover:text-primary"
                   }`}
                 >
                   {item.name}

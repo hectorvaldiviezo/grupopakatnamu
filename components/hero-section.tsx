@@ -77,9 +77,9 @@ export default function HeroSection() {
     >
       {/* Animated geometric shapes */}
       <div className="absolute inset-0">
-        <div className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full bg-primary opacity-20 blur-[100px]" />
+        <div className="absolute left-[10%] top-[20%] md:size-64 rounded-full bg-primary opacity-15 blur-[100px]" />
         <div className="absolute right-[15%] top-[30%] h-72 w-72 rounded-full bg-secondary opacity-30 blur-[120px]" />
-        <div className="absolute bottom-[10%] left-[20%] h-80 w-80 rounded-full bg-primary opacity-20 blur-[150px]" />
+        {/* <div className="absolute bottom-[10%] left-[20%] h-80 w-80 rounded-full bg-primary opacity-15 blur-[150px]" /> */}
       </div>
 
       {/* Dynamic grid lines */}
@@ -252,9 +252,9 @@ export default function HeroSection() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-16 text-center">
         <AnimatePresence>
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, type: "spring" }}
+            transition={{ duration: 0.5, type: "spring" }}
             className="relative mb-8"
           >
             <div className="absolute -inset-4 rounded-full bg-white/5 backdrop-blur-sm" />
@@ -269,7 +269,7 @@ export default function HeroSection() {
             <motion.div
               className="absolute -inset-1 rounded-full opacity-0"
               animate={{
-                opacity: [0, 0.5, 0],
+                opacity: [0, 0.1, 0],
                 scale: [1, 1.2, 1],
               }}
               transition={{
@@ -359,7 +359,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.9, duration: 0.8 }}
+              transition={{ delay: 1.8, duration: 0.8 }}
               className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
               style={{
                 boxShadow:
@@ -381,7 +381,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.7, duration: 0.8 }}
+              transition={{ delay: 2.1, duration: 0.8 }}
               className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-4 backdrop-blur-md"
               style={{
                 boxShadow: "0 0 20px rgba(1, 35, 126, 0.3)",
