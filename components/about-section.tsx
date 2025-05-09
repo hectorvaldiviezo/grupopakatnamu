@@ -116,7 +116,7 @@ export default function AboutSection() {
       {/* Textured overlay */}
       <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-10 mix-blend-overlay" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="max-w-screen-xl relative z-10 mx-auto px-4">
         <motion.div style={{ y, opacity }} className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl text-secondary">
             Sobre Nosotros
@@ -157,7 +157,7 @@ export default function AboutSection() {
         >
           <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl">
             <Image
-              src="https://milla.grupopakatnamu.com/webImages/4/Historia"
+              src="https://milla.grupopakatnamu.com/storage/webImages/4/inicio-historia.png"
               alt="Grupo Pakatnamu Team"
               width={1000}
               height={500}

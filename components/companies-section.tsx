@@ -22,7 +22,7 @@ const companies = [
       "Transporte especializado",
     ],
     image:
-      "https://milla.grupopakatnamu.com/webImages/4/Transportes",
+      "https://milla.grupopakatnamu.com/storage/webImages/4/empresas-transportes.png",
     link: "https://transportespakatnamu.com/",
   },
   {
@@ -39,7 +39,7 @@ const companies = [
       "Asesoría especializada",
     ],
     image:
-      "https://milla.grupopakatnamu.com/webImages/4/Deposito",
+      "https://milla.grupopakatnamu.com/storage/webImages/4/empresas-deposito.png",
     link: "https://www.depositopakatnamu.com.pe/",
   },
   {
@@ -55,7 +55,8 @@ const companies = [
       "Repuestos originales",
       "Financiamiento flexible",
     ],
-    image: "https://milla.grupopakatnamu.com/webImages/4/Automotores",
+    image:
+      "https://milla.grupopakatnamu.com/storage/webImages/4/empresas-automotores.png",
     link: "https://www.automotorespakatnamu.com/",
   },
 ];

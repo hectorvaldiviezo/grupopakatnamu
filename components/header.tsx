@@ -8,10 +8,11 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Inicio", href: "/" },
-  { name: "Empresas", href: "/#empresas" },
-  { name: "Nosotros", href: "/#nosotros" },
-  { name: "Novedades", href: "/#novedades" },
-  { name: "Contacto", href: "/#contacto" },
+  // { name: "Empresas", href: "/#empresas" },
+  // { name: "Nosotros", href: "/#nosotros" },
+  { name: "Novedades", href: "/novedades" },
+  // { name: "Contacto", href: "/#contacto" },
+  { name: "Trabaja con Nosotros", href: "/trabaja-con-nosotros" },
 ];
 
 export default function Header() {
@@ -30,9 +31,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 max-w-screen-xl mx-auto px-4 py-3 m-2 rounded-xl ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 max-w-screen-xl mx-auto px-4 py-3 rounded-xl ${
         isScrolled
-          ? "bg-gradient-to-r from-secondary via-secondary to-primary shadow-lg backdrop-blur-md"
+          ? "bg-gradient-to-r from-secondary via-secondary to-primary shadow-lg backdrop-blur-md m-2"
           : "bg-transparent text-secondary"
       }`}
     >

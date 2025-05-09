@@ -1,4 +1,6 @@
+"use client";
 import { AnimatedElement } from "./animated-element";
+import { AuroraText } from "./magicui/aurora-text";
 
 export interface TitleProps {
   title: string;
@@ -7,14 +9,16 @@ export interface TitleProps {
 
 export default function TitleComponent({ title, description }: TitleProps) {
   return (
-    <AnimatedElement animation="fade-up" className="text-center mb-16">
-      <div className="grid bg-linear-to-r backdrop-blur-3xl p-4 gap-4 mb-8 rounded-2xl justify-items-center">
-        <h1 className="sm:text-4xl text-2xl w-fit uppercase font-bold text-center text-primary">
+    <AnimatedElement animation="fade-up" className="text-center mb-4">
+      <div className="grid bg-transparent gap-2 p-4 rounded-2xl justify-items-center">
+        {/* <h1 className="sm:text-5xl text-2xl sm:pb-2 w-fit font-bold text-center bg-linear-to-b from-secondary dark:from-primary to-blue-800 dark:to-blue-600 bg-clip-text text-transparent"> */}
+        <AuroraText className="sm:text-5xl text-3xl w-fit font-bold text-center">
           {title}
-        </h1>
+        </AuroraText>
+        {/* </h1> */}
 
         <div className="max-w-4xl mx-auto">
-          <p className="sm:text-lg text-xs text-center text-gray-500">
+          <p className="sm:text-lg text-sm text-center text-gray-500">
             {description}
           </p>
         </div>

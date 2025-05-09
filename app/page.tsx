@@ -5,6 +5,7 @@ import AboutSection from "@/components/about-section";
 import NewsSection from "@/components/news-section";
 import Footer from "@/components/footer";
 import { getNewsLimit } from "@/components/novedades/lib/novedades.actions";
+import ValuesSection from "@/components/values";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
@@ -19,6 +20,8 @@ export default async function Home() {
       </section>
       <section id="nosotros">
         <AboutSection />
+
+        <ValuesSection />
       </section>
       <section id="novedades">
         <NewsSection news={noticias} />

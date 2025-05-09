@@ -13,8 +13,6 @@ interface NewsSectionProps {
 }
 
 export default function NewsSection({ news }: NewsSectionProps) {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
   return (
     <section className="relative py-24">
       {/* Background with texture */}
@@ -49,7 +47,7 @@ export default function NewsSection({ news }: NewsSectionProps) {
         </div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="max-w-screen-xl relative z-10 mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,11 +73,9 @@ export default function NewsSection({ news }: NewsSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                onMouseEnter={() => setHoveredCard(item.id)}
-                onMouseLeave={() => setHoveredCard(null)}
                 className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
               >
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-60 overflow-hidden m-2 rounded-xl">
                   <Image
                     src={item.image || "/placeholder.svg"}
                     alt={item.id.toString()}
@@ -107,15 +103,6 @@ export default function NewsSection({ news }: NewsSectionProps) {
                   </h3>
 
                   <p className="mb-4 text-slate-600">{item.description}</p>
-
-                  <div className="flex items-center font-medium text-secondary">
-                    Leer más
-                    <ArrowRight
-                      className={`ml-2 h-4 w-4 transition-transform duration-300 ${
-                        hoveredCard === item.id ? "translate-x-1" : ""
-                      }`}
-                    />
-                  </div>
                 </div>
               </motion.div>
             </Link>

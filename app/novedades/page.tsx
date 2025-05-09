@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { getNews } from "@/components/novedades/lib/novedades.actions";
 import Novedades from "@/components/novedades/noticias";
@@ -10,6 +11,7 @@ export default async function Page() {
     <main className="min-h-screen overflow-hidden">
       <Header />
       <Novedades newsData={noticias} />
+      <Footer />
     </main>
   );
 }
