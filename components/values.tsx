@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function ValuesSection() {
@@ -54,7 +53,7 @@ export default function ValuesSection() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl font-bold mb-4 text-secondary"
+            className="text-5xl font-bold mb-4 text-secondary"
           >
             Nuestros Principios
           </motion.h2>
@@ -102,22 +101,38 @@ export default function ValuesSection() {
               whileInView="animate"
               whileHover="hover"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-8 rounded-xl shadow-md"
+              className="bg-white p-8 rounded-xl overflow-hidden relative shadow-md min-h-64"
+              style={{
+                backgroundImage: `url(${value.imgSrc})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
             >
-              <div className="size-24 rounded-full flex items-center justify-center mb-6 mx-auto relative">
-                <Image
-                  src={value.imgSrc}
-                  alt={value.title}
-                  fill
-                  className="aspect-square object-cover rounded-full"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-800 text-center">
+              {/* <div
+                className={`h-full w-full z-0 absolute top-0 left-0 ${
+                  index % 2 === 0 ? "bg-primary/70" : "bg-secondary/70"
+                }`}
+              ></div>
+              <h3 className="text-xl relative font-bold mb-4 text-white text-center">
                 {value.title}
               </h3>
-              <p className="text-gray-600 text-center text-sm">
+              <p className="text-gray-50 relative text-center text-sm">
                 {value.description}
-              </p>
+              </p> */}
+              <div
+                className={`absolute top-0 left-0 w-full h-full group overflow-hidden 
+    ${index % 2 === 0 ? "bg-danger/70" : "bg-navy/70"}`}
+              >
+                <div className="flex flex-col items-center justify-center h-full text-center px-6 transition-all duration-500">
+                  <h3 className="text-2xl font-bold text-white transition-transform duration-500">
+                    {value.title}
+                  </h3>
+                  <p className="text-white text-sm text-justify max-w-md mt-2 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

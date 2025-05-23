@@ -75,179 +75,6 @@ export default function HeroSection() {
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden bg-gradient-to-br bg-background"
     >
-      {/* Animated geometric shapes */}
-      <div className="absolute inset-0">
-        <div className="absolute left-[10%] top-[20%] md:size-64 rounded-full bg-primary opacity-15 blur-[100px]" />
-        <div className="absolute right-[15%] top-[30%] h-72 w-72 rounded-full bg-secondary opacity-30 blur-[120px]" />
-        {/* <div className="absolute bottom-[10%] left-[20%] h-80 w-80 rounded-full bg-primary opacity-15 blur-[150px]" /> */}
-      </div>
-
-      {/* Dynamic grid lines */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute inset-0 grid grid-cols-6 gap-4">
-          {Array.from({ length: 7 }).map((_, i) => (
-            <div
-              key={`v-${i}`}
-              className="h-full w-[1px] bg-gradient-to-b from-secondary via-white to-transparent"
-              style={{
-                opacity: i % 2 === 0 ? 0.3 : 0.1,
-                transform: `translateX(${i * (100 / 6)}%)`,
-              }}
-            />
-          ))}
-        </div>
-        <div className="absolute inset-0 grid grid-rows-6 gap-4">
-          {Array.from({ length: 7 }).map((_, i) => (
-            <div
-              key={`h-${i}`}
-              className="h-[1px] w-full bg-gradient-to-r from-secondary via-white to-transparent"
-              style={{
-                opacity: i % 2 === 0 ? 0.3 : 0.1,
-                transform: `translateY(${i * (100 / 6)}%)`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Animated particles */}
-      <div className="absolute inset-0 z-0">
-        {particles.map((p, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: `${p.width}px`,
-              height: `${p.height}px`,
-              left: `${p.left}%`,
-              top: `${p.top}%`,
-              opacity: p.opacity,
-            }}
-            animate={{ y: [0, p.y], opacity: [0.7, 0.1, 0.7] }}
-            transition={{
-              duration: p.duration,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "linear",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Textured overlay */}
-      <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-10 mix-blend-overlay" />
-
-      {/* Diagonal divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 w-full overflow-hidden">
-        <div
-          className="absolute h-32 w-[200%] rotate-3 bg-white"
-          style={{
-            bottom: -80,
-            left: -50,
-            opacity: 0.05,
-          }}
-        />
-        <div
-          className="absolute h-32 w-[200%] rotate-[-3deg] bg-white"
-          style={{
-            bottom: -80,
-            right: -50,
-            opacity: 0.05,
-          }}
-        />
-      </div>
-
-      {/* 3D rotating cube */}
-      <div
-        className="absolute left-[10%] top-[20%] z-0 h-40 w-40 opacity-20 md:h-60 md:w-60"
-        style={{
-          perspective: "800px",
-        }}
-      >
-        <motion.div
-          className="relative h-full w-full"
-          animate={{ rotateY: 360, rotateX: 360 }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-          style={{
-            transformStyle: "preserve-3d",
-          }}
-        >
-          <div
-            className="absolute inset-0 border-2 border-primary/30"
-            style={{ transform: "translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-secondary/30"
-            style={{ transform: "rotateY(90deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-primary/30"
-            style={{ transform: "rotateY(180deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-secondary/30"
-            style={{ transform: "rotateY(-90deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-primary/30"
-            style={{ transform: "rotateX(90deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-secondary/30"
-            style={{ transform: "rotateX(-90deg) translateZ(30px)" }}
-          />
-        </motion.div>
-      </div>
-
-      {/* 3D rotating cube (right side) */}
-      <div
-        className="absolute right-[10%] top-[30%] z-0 h-40 w-40 opacity-20 md:h-60 md:w-60"
-        style={{
-          perspective: "800px",
-        }}
-      >
-        <motion.div
-          className="relative h-full w-full"
-          animate={{ rotateY: -360, rotateX: -360 }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-          style={{
-            transformStyle: "preserve-3d",
-          }}
-        >
-          <div
-            className="absolute inset-0 border-2 border-primary/30"
-            style={{ transform: "translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-secondary/30"
-            style={{ transform: "rotateY(90deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-primary/30"
-            style={{ transform: "rotateY(180deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-secondary/30"
-            style={{ transform: "rotateY(-90deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-primary/30"
-            style={{ transform: "rotateX(90deg) translateZ(30px)" }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-secondary/30"
-            style={{ transform: "rotateX(-90deg) translateZ(30px)" }}
-          />
-        </motion.div>
-      </div>
-
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-16 text-center">
         <AnimatePresence>
@@ -316,7 +143,7 @@ export default function HeroSection() {
             }}
           />
         </motion.div>
-
+        {/* 
         <motion.p
           className="parallax max-w-2xl text-xl text-secondary/80"
           data-speed="0.2"
@@ -330,9 +157,9 @@ export default function HeroSection() {
           <span className="font-semibold text-primary">
             empresas especializadas
           </span>
-        </motion.p>
+        </motion.p> */}
 
-        <div className="flex pt-4 gap-8">
+        <div className="flex py-8 gap-16">
           {/* Floating company icons */}
           <Link target="_blank" href="https://transportespakatnamu.com/">
             <motion.div
@@ -410,6 +237,12 @@ export default function HeroSection() {
               variant="secondary"
               size="lg"
               className="rounded-full text-xl"
+              onClick={() => {
+                const element = document.getElementById("empresas");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
               Descubrir
             </Button>

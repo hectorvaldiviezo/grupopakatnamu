@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
-import { ArrowRight, Truck, Warehouse, Car, Link2 } from "lucide-react";
+import { Truck, Warehouse, Car, Link2 } from "lucide-react";
 import Link from "next/link";
 
 const companies = [
@@ -63,13 +63,31 @@ const companies = [
 
 export default function CompaniesSection() {
   const [activeTab, setActiveTab] = useState("transportes");
-
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <section className="relative py-16">
       {/* Background with texture */}
       <div className="absolute inset-0" />
       {/* <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-5" /> */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      {/* <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute inset-0 grid grid-cols-6 gap-4">
           {Array.from({ length: 7 }).map((_, i) => (
             <div
@@ -94,23 +112,26 @@ export default function CompaniesSection() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-8 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-center mb-16"
         >
-          <h2 className="mb-4 text-4xl font-bold tracking-tight text-secondary md:text-5xl">
+          <motion.h2
+            variants={itemVariants}
+            className="text-5xl font-bold mb-4 text-secondary"
+          >
             Nuestras Empresas
-          </h2>
-          {/* <p className="mx-auto max-w-2xl text-lg text-slate-600">
-            Descubre cómo nuestras empresas especializadas trabajan en sinergia
-            para ofrecer soluciones integrales.
-          </p> */}
+          </motion.h2>
+          <motion.div
+            variants={itemVariants}
+            className="w-20 h-1 bg-primary mx-auto mb-8"
+          ></motion.div>
         </motion.div>
 
         <Tabs
@@ -119,7 +140,7 @@ export default function CompaniesSection() {
           onValueChange={setActiveTab}
           className="mx-auto max-w-5xl"
         >
-          <TabsList className="mx-auto mb-12 grid w-full max-w-2xl grid-cols-3 h-full rounded-full">
+          <TabsList className="mx-auto mb-12 grid w-full max-w-2xl grid-cols-3 h-full rounded-full bg-secondary/10 p-1 shadow-md">
             {companies.map((company) => (
               <TabsTrigger
                 key={company.id}

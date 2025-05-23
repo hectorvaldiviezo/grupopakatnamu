@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { NewsResponse } from "./novedades/lib/novedades.interface";
@@ -13,14 +12,34 @@ interface NewsSectionProps {
 }
 
 export default function NewsSection({ news }: NewsSectionProps) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section className="relative py-24">
       {/* Background with texture */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-100 opacity-80" />
-      <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-5" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-100 opacity-80" />
+      <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-5" /> */}
 
       {/* Dynamic grid lines */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      {/* <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute inset-0 grid grid-cols-6 gap-4">
           {Array.from({ length: 7 }).map((_, i) => (
             <div
@@ -45,19 +64,26 @@ export default function NewsSection({ news }: NewsSectionProps) {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="max-w-screen-xl relative z-10 mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-center mb-16"
         >
-          <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+          <motion.h2
+            variants={itemVariants}
+            className="text-5xl font-bold mb-4 text-secondary"
+          >
             Novedades
-          </h2>
+          </motion.h2>
+          <motion.div
+            variants={itemVariants}
+            className="w-20 h-1 bg-primary mx-auto mb-8"
+          ></motion.div>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
             Mantente al día con las últimas noticias y actualizaciones de
             nuestras empresas.
@@ -73,7 +99,7 @@ export default function NewsSection({ news }: NewsSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
+                className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl h-full"
               >
                 <div className="relative h-60 overflow-hidden m-2 rounded-xl">
                   <Image
@@ -98,7 +124,7 @@ export default function NewsSection({ news }: NewsSectionProps) {
                     {item.date}
                   </div>
 
-                  <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-secondary">
+                  <h3 className="mb-3 text-xl font-bold line-clamp-3 text-slate-900 transition-colors duration-300 group-hover:text-secondary">
                     {item.title}
                   </h3>
 

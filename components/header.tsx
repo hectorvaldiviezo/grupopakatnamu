@@ -71,7 +71,7 @@ export default function Header() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`relative text-sm font-semibold transition-colors duration-300 uppercase ${
+                  className={`relative text-sm font-bold transition-colors duration-300 uppercase ${
                     isScrolled
                       ? "text-white hover:text-gray-300"
                       : "text-secondary hover:text-primary"
